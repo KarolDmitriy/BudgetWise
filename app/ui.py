@@ -10,7 +10,7 @@ def run_app():
     st.set_page_config(page_title="BudgetWise", layout="wide")
     init_db()
 
-    st.title("💡 BudgetWise — умный финансовый помощник")
+    st.title("BudgetWise — умный финансовый помощник")
     col1, col2 = st.columns([2,1])
 
     with col1:
@@ -87,7 +87,7 @@ def run_app():
                         conn.execute("INSERT INTO categories (name, type) VALUES (?,?)", (name, typ))
                         conn.commit()
                         st.success("Категория добавлена.")
-                        st.experimental_rerun()
+                        st.rerun()
                     except Exception as e:
                         st.error("Ошибка: возможно, категория уже существует.")
                     finally:
