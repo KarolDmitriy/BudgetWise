@@ -39,7 +39,7 @@ def run_app():
                 conn.commit()
                 conn.close()
                 st.success("Операция добавлена.")
-                st.experimental_rerun()
+                st.rerun()
 
         st.markdown("---")
         st.subheader("Операции")
